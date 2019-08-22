@@ -15,6 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from home import views as home_views
+from django.conf.urls import url
+from main_blog import views as main_blog_views
 
 admin.site.site_header = 'MDT Dashboard'                    # default: "Django Administration"
 admin.site.index_title = 'Apps area'                 		# default: "Site administration"
@@ -22,4 +25,6 @@ admin.site.site_title = 'MDT' 								# default: "Django site admin"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+	url(r'^$', home_views.home, name='home'),
+	url(r'^blog/$', main_blog_views.blog, name='blog'),
 ]
