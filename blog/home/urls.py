@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
 from main_blog import views as main_blog_views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
